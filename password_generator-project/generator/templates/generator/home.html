@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class='container text-center'>
+<h1>PASSWORD GENERATOR</h1>
+
+<!-- Password is the name of the file you'll want to land to after generating password which is not a good practice because the url may change leading to an error and hene reference the page using url-->
+
+<!--<form action="password"> -->
+
+<form action={% url 'password' %}>
+<!--select in HTML is what is drop down in normal terms-->
+	Choose the Length of the Password:
+	<select name="length" name="Length">
+<!-- Use of value='6' means the base data is 6 and you can have some heavy text in the drop down description-->
+		<option value='6'>6</option>
+		<option value='6'>7</option>
+		<option value='6'>8</option>
+		<option value='9'>9</option>
+		<option value='10'>10</option>
+		<option value='11'>11</option>
+<!--You can have a default value set by using the 'selected' utility of HTML -->
+		<option value='12' selected = 'selected'>12</option>
+		<option value='13'>13</option>
+		<option value='14'>14</option>
+		<option value='15'>15</option>
+	</select>
+	<br>
+	<br>
+	<input type="checkbox" name="UpperCase">UpperCase
+	<br>
+	<input type='checkbox' name='Numbers'>Numbers
+	<br>
+	<input type='checkbox' name='SpecialCharacters'>Special Characters
+	<br>
+	<br>
+<!--After havin generated a number we want user to input/press submit buttion -->
+	<input type='submit' value='Generate Password' class='btn btn-primary'>
+</form>
+<a href={% url 'about' %}>ABOUT</a>
+</div>
