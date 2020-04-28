@@ -15,21 +15,10 @@ Including another URLconf
 """
 #from django.contrib import admin
 from django.urls import path
-#this is something required to be displayed and hence imported from the app
 from generator import views
 
-#BY ME : Is the starting point of everything in django
-# This is the page being referred when someone types in a url
-#localhost:8000/admin takes us to a completely different page altogether
-#using this we route to different pages in a url, change admin -> hithere and now the content would be
-#visible at localhost:8000/hithere
-#removing for creating a custom home page
-#urlpatterns = [
-#    path('admin/', admin.site.urls),
-#]
 urlpatterns = [
     path('', views.home, name="home"),
     path('about/', views.about, name="about"),
-    #makes the url name set to password
     path('password/', views.password, name='password')
 ]
